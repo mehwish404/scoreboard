@@ -9,8 +9,9 @@ for(let i = 0; i<buttons.length; i++) {
     button.addEventListener("click",(event) =>{
         console.log(button.parentElement.parentElement.className);
         let parent = button.parentElement.parentElement;
-        let score1 = parent.querySelector(".score1");
-        let score2 = parent.querySelector(".score2");
+        console.log("now");
+        let score1 = parent.parentElement.querySelector("#score1");
+        let score2 = parent.parentElement.querySelector("#score2");
         if (parent.className.includes("left")) {
             player = 1;
         }
