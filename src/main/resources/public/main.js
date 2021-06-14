@@ -1,6 +1,8 @@
 console.log("Hello World")
 let score1 = document.getElementById("score1");
 let score2 = document.getElementById("score2");
+let name1 = document.getElementById("name1");
+let name2 = document.getElementById("name2");
 fetch("http://localhost:8080/match/1")
     .then(function(response) {return response.json();})
     .then(function(data) {
@@ -8,6 +10,8 @@ fetch("http://localhost:8080/match/1")
         let match = data.id;
         score1.innerHTML = data.matchsets[0].score1;
         score2.innerHTML = data.matchsets[0].score2;
+        name1.innerHTML = data.player1;
+        name2.innerHTML = data.player2;
     })
 
 document.getElementById("score1plus").addEventListener("click",(event) =>{
