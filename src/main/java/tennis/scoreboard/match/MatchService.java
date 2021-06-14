@@ -1,8 +1,8 @@
-package tennis.scoreboard.feld;
+package tennis.scoreboard.match;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import tennis.scoreboard.feld.exceptions.MatchNotFoundException;
+import tennis.scoreboard.match.exceptions.MatchNotFoundException;
 import java.util.List;
 
 @Service

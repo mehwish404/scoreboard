@@ -1,18 +1,15 @@
 package tennis.scoreboard.matchset;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
-import tennis.scoreboard.feld.Match;
-import tennis.scoreboard.feld.MatchService;
-import tennis.scoreboard.feld.exceptions.MatchNotFoundException;
+import tennis.scoreboard.match.Match;
+import tennis.scoreboard.match.MatchService;
+import tennis.scoreboard.match.exceptions.MatchNotFoundException;
 import tennis.scoreboard.matchset.exceptions.MatchSetApiException;
 import tennis.scoreboard.matchset.exceptions.MatchSetLimitCrossExceptions;
 import tennis.scoreboard.matchset.exceptions.MatchSetNotFoundException;
-
-import java.util.List;
 
 @RestController
 public class MatchSetController {

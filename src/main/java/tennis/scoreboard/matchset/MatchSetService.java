@@ -3,8 +3,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import tennis.scoreboard.feld.Match;
-import tennis.scoreboard.feld.MatchRepository;
+import tennis.scoreboard.match.Match;
+import tennis.scoreboard.match.MatchRepository;
 import tennis.scoreboard.matchset.exceptions.MatchSetLimitCrossExceptions;
 import tennis.scoreboard.matchset.exceptions.MatchSetNotFoundException;
 
@@ -91,7 +91,7 @@ public class MatchSetService {
         if(player==2) {
             matchset.setScore2(matchset.getScore2()-1);
         }
-        return matchset;
+        return matchSetRepository.save(matchset);
     }
 
 

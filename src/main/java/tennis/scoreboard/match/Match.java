@@ -1,6 +1,5 @@
-package tennis.scoreboard.feld;
+package tennis.scoreboard.match;
 
-import org.springframework.lang.NonNull;
 import tennis.scoreboard.matchset.MatchSet;
 
 import javax.persistence.*;

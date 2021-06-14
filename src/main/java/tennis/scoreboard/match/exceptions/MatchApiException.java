@@ -1,4 +1,4 @@
-package tennis.scoreboard.feld.exceptions;
+package tennis.scoreboard.match.exceptions;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

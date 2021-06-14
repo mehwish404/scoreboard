@@ -1,9 +1,9 @@
-package tennis.scoreboard.feld;
+package tennis.scoreboard.match;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import tennis.scoreboard.feld.exceptions.MatchApiException;
-import tennis.scoreboard.feld.exceptions.MatchNotFoundException;
+import tennis.scoreboard.match.exceptions.MatchApiException;
+import tennis.scoreboard.match.exceptions.MatchNotFoundException;
 
 import java.util.List;
 

@@ -1,9 +1,8 @@
 package tennis.scoreboard.matchset;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
-import tennis.scoreboard.feld.Match;
+import tennis.scoreboard.match.Match;
 
 import java.util.List;
 

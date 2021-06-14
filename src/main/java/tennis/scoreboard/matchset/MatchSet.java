@@ -1,7 +1,7 @@
 package tennis.scoreboard.matchset;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import tennis.scoreboard.feld.Match;
+import tennis.scoreboard.match.Match;
 
 import javax.persistence.*;
 
