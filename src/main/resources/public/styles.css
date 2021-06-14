@@ -1,0 +1,79 @@
+.wrapper {
+    display: grid;
+    grid-template-rows: 100px 1fr 1fr 1fr;
+    height: 100vh;
+    background: green;
+    border: 5px solid black;
+    box-sizing: border-box;
+}
+
+/** Zeile **/
+.set {
+    display: grid;
+    grid-template-columns: 40% 20% 40%;
+    background: #eee;
+    margin: 50px;
+    border: 3px solid black;
+    transition: all 0.3s ease-in-out;
+    min-height: 0vh;
+}
+
+.set.active {
+    background: red;
+    margin: 0px;
+    min-height: 50vh;
+}
+
+.set.finished {
+    background: brown;
+}
+
+.divider {
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.score {
+    display: grid;
+    background: blanchedalmond;
+    font-size: 40px;
+}
+
+.score.left {
+    grid-template-columns: 1fr 2fr;
+}
+
+.score.right {
+    grid-template-columns: 2fr 1fr;
+}
+
+.control {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    display: none;
+}
+
+.active>.score>.control {
+    display: grid;
+}
+
+.number {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.matchnames {
+    display: grid;
+    grid-template-columns: 40% 20% 40%;
+    margin: 50px 50px 0px 50px;
+}
+
+.name {
+    font-size: 60px;
+    color: white;
+    text-align: center;
+
+}
