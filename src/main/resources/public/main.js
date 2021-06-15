@@ -10,7 +10,12 @@ for (let i = 0; i < buttons.length; i++) {
     button.addEventListener("click", (event) => {
         // console.log(button.parentElement.parentElement.className);
         let parent = button.parentElement.parentElement;
-        let setnumber = document.querySelector(".active").id;
+        
+        // https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes
+        let setnumber = document.querySelector(".active").dataset.setnumber;
+
+        console.log("Satz#", setnumber)
+
         let score1 = parent.parentElement.querySelector(".score1");
         let score2 = parent.parentElement.querySelector(".score2");
 
