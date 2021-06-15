@@ -21,7 +21,7 @@
 .set.active {
     background: red;
     margin: 0px;
-    min-height: 50vh;
+    min-height: 30vh;
 }
 
 .set.finished {
@@ -76,10 +76,4 @@
     color: white;
     text-align: center;
 
-}
-#finish {
-    margin-top: 10vw;
-}
-#doppelpunkt {
-    margin-left: 5vw;
 }
