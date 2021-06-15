@@ -10,11 +10,10 @@ for (let i = 0; i < buttons.length; i++) {
     button.addEventListener("click", (event) => {
         // console.log(button.parentElement.parentElement.className);
         let parent = button.parentElement.parentElement;
+        let setnumber = document.querySelector(".active").id;
         let score1 = parent.parentElement.querySelector(".score1");
         let score2 = parent.parentElement.querySelector(".score2");
 
-        console.log(score1);
-        console.log(score2);
 
         if (parent.className.includes("left")) {
             player = 1;
@@ -23,14 +22,12 @@ for (let i = 0; i < buttons.length; i++) {
             player = 2;
         }
 
-
         if (button.classList.contains("minus")) {
-            console.log("minus")
-            minusscore(player, score1, score2)
+            minusscore(player, score1, score2,setnumber)
         } 
         
         if (button.classList.contains("plus")) {
-            addscore(player, score1, score2)
+            addscore(player, score1, score2,setnumber)
         }
     })
 }
@@ -52,9 +49,9 @@ function createMatch(player1, player2, courtNumber, score1, score2) {
 createMatch();
 
 
-function addscore(player, score1htmlelement, score2htmlelement) {
-    value = 0;
-    fetch("http://localhost:8080/match/1/1/increase/" + player, {
+function addscore(player, score1htmlelement, score2htmlelement,setnumber) {
+
+    fetch("http://localhost:8080/match/1/"+setnumber+"/increase/" + player, {
         method: "POST"
     })
         .then(function (response) { return response.json(); })
@@ -65,9 +62,9 @@ function addscore(player, score1htmlelement, score2htmlelement) {
 }
 
 
-function minusscore(player, scoreEle1, scoreEle2) {
-    console.log("inus :" + player)
-    fetch("http://localhost:8080/match/1/1/decrease/" + player, {
+function minusscore(player, scoreEle1, scoreEle2,setnumber) {
+
+    fetch("http://localhost:8080/match/1/"+setnumber+"/decrease/" + player, {
         method: "POST"
     })
         .then(function (response) {
