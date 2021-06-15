@@ -1,36 +1,43 @@
-console.log("Hello World")
+
 let name1 = document.getElementById("name1");
 let name2 = document.getElementById("name2");
 test();
 let buttons = document.getElementsByTagName("button");
-console.log(buttons);
 for (let i = 0; i < buttons.length; i++) {
     let button = buttons[i];
     let player = 1;
     button.addEventListener("click", (event) => {
         // console.log(button.parentElement.parentElement.className);
-        let parent = button.parentElement.parentElement;
-        let score1 = parent.parentElement.querySelector(".score1");
-        let score2 = parent.parentElement.querySelector(".score2");
+        let setZeile = button.parentElement.parentElement.parentElement;
 
-        console.log(score1);
-        console.log(score2);
 
-        if (parent.className.includes("left")) {
+        let setNumber = 0
+
+        switch (setZeile.id) {
+            case "set1": setNumber = 1; break;
+            case "set2": setNumber = 2; break
+            case "set3": setNumber = 3; break
+            default: console.log(setZeile.id);break;
+        }
+
+
+        let score1 = setZeile.querySelector(".score1");
+        let score2 = setZeile.querySelector(".score2");
+
+        if (setZeile.className.includes("left")) {
             player = 1;
         }
-        else if (parent.className.includes("right")) {
+        else if (setZeile.className.includes("right")) {
             player = 2;
         }
 
 
         if (button.classList.contains("minus")) {
-            console.log("minus")
-            minusscore(player, score1, score2)
+            minusscore(player, score1, score2, setNumber)
         } 
         
         if (button.classList.contains("plus")) {
-            addscore(player, score1, score2)
+            addscore(player, score1, score2, setNumber)
         }
     })
 }
@@ -52,7 +59,7 @@ function createMatch(player1, player2, courtNumber, score1, score2) {
 createMatch();
 
 
-function addscore(player, score1htmlelement, score2htmlelement) {
+function addscore(player, score1htmlelement, score2htmlelement, setNumber) {
     value = 0;
     fetch("http://localhost:8080/match/1/1/increase/" + player, {
         method: "POST"
@@ -65,8 +72,8 @@ function addscore(player, score1htmlelement, score2htmlelement) {
 }
 
 
-function minusscore(player, scoreEle1, scoreEle2) {
-    console.log("inus :" + player)
+function minusscore(player, scoreEle1, scoreEle2, setNumber) {
+    console.log("minus :" + player)
     fetch("http://localhost:8080/match/1/1/decrease/" + player, {
         method: "POST"
     })
