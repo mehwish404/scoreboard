@@ -9,9 +9,9 @@ for (let i = 0; i < buttons.length; i++) {
     let player = 1;
     button.addEventListener("click", (event) => {
         // console.log(button.parentElement.parentElement.className);
-        let parent = button.parentElement.parentElement.parentElement;
-        let score1 = parent.querySelector(".score1");
-        let score2 = parent.querySelector(".score2");
+        let parent = button.parentElement.parentElement;
+        let score1 = parent.parentElement.querySelector(".score1");
+        let score2 = parent.parentElement.querySelector(".score2");
 
         console.log(score1);
         console.log(score2);
@@ -23,9 +23,9 @@ for (let i = 0; i < buttons.length; i++) {
             player = 2;
         }
 
-        console.log(button.classList);
 
         if (button.classList.contains("minus")) {
+            console.log("minus")
             minusscore(player, score1, score2)
         } 
         
@@ -79,7 +79,7 @@ function addscore(player, score1htmlelement, score2htmlelement) {
 
 
 function minusscore(player, scoreEle1, scoreEle2) {
-    value = 0;
+    console.log("inus :" + player)
     fetch("http://localhost:8080/match/1/1/decrease/" + player, {
         method: "POST"
     })
