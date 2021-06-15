@@ -51,19 +51,6 @@ function createMatch(player1, player2, courtNumber, score1, score2) {
  
 createMatch();
 
-// document.getElementById("score1plus").addEventListener("click",(event) =>{
-//     addscore(1, score1, score2);
-// })
-// document.getElementById("score2plus").addEventListener("click",(event) =>{
-//     addscore(2, score1, score2);
-// })
-
-// document.getElementById("score1minus").addEventListener("click",(event) =>{
-//     minusscore(1);
-// })
-// document.getElementById("score2minus").addEventListener("click",(event) =>{
-//     minusscore(2);
-// })
 
 function addscore(player, score1htmlelement, score2htmlelement) {
     value = 0;
@@ -111,3 +98,20 @@ function test() {
             console.log(data)
         })
 }
+
+
+// Active Klasse der Sätze verschieben
+
+let allSets = document.querySelectorAll(".set")
+
+allSets.forEach(clickedSet => {
+    clickedSet.addEventListener("click", (event) => {
+        // entferne active von allen Element, die .set als CSS-Klasse haben
+        allSets.forEach(s => s.classList.remove("active"))
+
+        // danach füge active CSS-Klasse zum angeklickten Set hinzu
+        clickedSet.classList.add("active")
+
+        console.log(clickedSet);
+    })
+})
