@@ -1,10 +1,6 @@
 .wrapper {
-    display: grid;
-    grid-template-rows: 100px 1fr 1fr 1fr;
+    background: #a1c1a1;
     height: 100vh;
-    background: green;
-    border: 5px solid black;
-    box-sizing: border-box;
 }
 
 /** Zeile **/
@@ -16,6 +12,10 @@
     border: 3px solid black;
     transition: all 0.3s ease-in-out;
     min-height: 0vh;
+
+}
+.hide{
+    display:none;
 }
 
 .set.active {
@@ -76,4 +76,100 @@
     color: white;
     text-align: center;
 
+}
+.headline{
+    font-size: 60px;
+    color: white;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.formular{
+    align-content:center ;
+}
+form{
+    text-align: center;
+}
+.form-style-3{
+    margin: 0 auto;
+    padding-top: 10vw;
+    max-width: 650px;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+.form-style-3 label{
+    display:block;
+    margin-bottom: 10px;
+}
+.form-style-3 label > span{
+    float: left;
+    width: 200px;
+    color: #21191c;
+    font-weight: bold;
+    font-size: 23px;
+}
+.form-style-3 fieldset{
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    margin: 0px 0px 10px 0px;
+    border: 1px solid #718f65;
+    padding: 20px;
+    background: #d0e0ca;
+    box-shadow: inset 0px 0px 15px #d0e0ca;
+}
+
+.form-style-3 input[type=text],
+.form-style-3 textarea{
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border: 1px solid #b6c4a3;
+    outline: none;
+    color: #98ad7b;
+    padding: 5px 8px 5px 8px;
+    box-shadow: inset 1px 1px 4px #c6cbbe;
+    -moz-box-shadow: inset 1px 1px 4px #c6cbbe;
+    -webkit-box-shadow: inset 1px 1px 4px #c6cbbe;
+    background: #e0e2dd;
+    width:50%;
+}
+
+.submit,
+.form-style-3  input[type=button]{
+    background: #e0e3da;
+    padding: 5px 15px 5px 15px;
+    color: #737373;
+    border-radius: 3px;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    font-weight: bold;
+    font-size: 15px;
+    margin-left: 250px;
+    margin-top: 25px;
+}
+.required{
+    color:black;
+    font-weight:normal;
+}
+.myButton {
+    box-shadow: 0px 10px 14px -7px #3e7327;
+    background-color:#77b55a;
+    border-radius:4px;
+    border:1px solid #4b8f29;
+    margin: 0;
+    top: 50%;
+    left: 50%;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:20px;
+    font-weight:bold;
+    padding:32px 76px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #5b8a3c;
+    visibility: hidden;
+}
+.myButton:hover {
+    background-color:#72b352;
 }

@@ -1,14 +1,42 @@
-console.log("Hello World")
-let name1 = document.getElementById("name1");
+//firstpage
+let submit = document.getElementsByTagName("button").item(0)
+let matchid=""
+
+async function getId() {
+    var fields = document.getElementsByClassName("input-field");
+    const ss = { court: fields[0].value, player1:fields[1].value,player2:fields[2].value };
+    let response = await fetch("http://localhost:8080/match",{
+        method:"POST",
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(ss)
+    });
+    let data = await response.json()
+    return data.id;
+}
+
+async function main() {
+
+    submit.addEventListener("click", async (event) =>  {
+        matchid = await getId();
+        localStorage.setItem("matchid",matchid);
+    });
+
+}
+
+main();
+
+
+
+/*let name1 = document.getElementById("name1");
 let name2 = document.getElementById("name2");
-test();
 let buttons = document.getElementsByTagName("button");
-console.log(buttons);
+
 for (let i = 0; i < buttons.length; i++) {
     let button = buttons[i];
     let player = 1;
     button.addEventListener("click", (event) => {
-        // console.log(button.parentElement.parentElement.className);
         let parent = button.parentElement.parentElement;
         
         // https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes
@@ -116,4 +144,4 @@ allSets.forEach(clickedSet => {
 
         console.log(clickedSet);
     })
-})
+})*/

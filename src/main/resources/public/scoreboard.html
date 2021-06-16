@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tennis Scoreboard</title>
+
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="styles.css">
+
+
+</head>
+
+<body>
+<div class="wrapper">
+    <header class="matchnames">
+        <div class="name">
+            <p id="name1"> </p>
+        </div>
+        <div> </div>
+        <div class="name">
+            <p id="name2"> </p>
+        </div>
+    </header>
+    <div class="set hide"  data-setnumber="1" >
+        <div class="score left">
+            <div class="control">
+                <button class="plus"> + </button>
+                <button class="minus"> - </button>
+            </div>
+            <div class="number">
+                <p class="score1"></p>
+            </div>
+        </div>
+        <div class="divider">
+            <span>:</span>
+        </div>
+        <div class="score right">
+            <div class="number">
+                <p class="score2"></p>
+            </div>
+            <div class="control">
+                <button class="plus"> + </button>
+                <button class="minus"> - </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="set hide"  data-setnumber="2" >
+        <div class="score left">
+            <div class="control">
+                <button class="plus"> + </button>
+                <button class="minus"> - </button>
+            </div>
+            <div class="number">
+                <p class="score1">1</p>
+            </div>
+        </div>
+        <div class="divider"><span>:</span></div>
+        <div class="score right">
+            <div class="number">
+                <p class="score2">1</p>
+            </div>
+            <div class="control">
+                <button class="plus"> + </button>
+                <button class="minus"> - </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="set hide" data-setnumber="3">
+        <div class="score left">
+            <div class="control">
+                <button class="plus"> + </button>
+                <button class="minus"> - </button>
+            </div>
+            <div class="number">
+                <p class="score1">1</p>
+            </div>
+        </div>
+        <div class="divider"><span>:</span></div>
+        <div class="score right">
+            <div class="number">
+                <p class="score2">1</p>
+            </div>
+            <div class="control">
+                <button class="plus"> + </button>
+                <button class="minus"> - </button>
+            </div>
+        </div>
+    </div>
+    <div class="start"><a href="#" class="myButton">Add set</a></div>
+
+</div>
+<script src="scoreboard.js"></script>
+</body>
+
+</html>
