@@ -9,9 +9,6 @@ fetch("http://localhost:8080/match/"+matchid)
     .then(function (data) {
         name1.innerHTML = data.player1;
         name2.innerHTML = data.player2;
-        if(data.matchsets.length == 0){
-            button.style.visibility = "visible";
-        }
     })
 let allSets = document.querySelectorAll(".set")
 button.addEventListener("click",  (event) =>  {
@@ -34,6 +31,9 @@ button.addEventListener("click",  (event) =>  {
             let score2 = parent.querySelector(".score2");
             score1.innerHTML = data.score1;
             score2.innerHTML = data.score2;
+            if(data.setnumber == 3){
+                button.remove();
+            }
         })
         .catch(error => alert(error.message))
 });
