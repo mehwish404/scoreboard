@@ -70,7 +70,11 @@
     grid-template-columns: 40% 20% 40%;
     margin: 50px 50px 0px 50px;
 }
-
+#courtname{
+    font-size: 80px;
+    color: white;
+    text-align: center;
+}
 .name {
     font-size: 60px;
     color: white;

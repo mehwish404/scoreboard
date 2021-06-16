@@ -1,15 +1,22 @@
 let name1 = document.getElementById("name1");
 let name2 = document.getElementById("name2");
-matchid = localStorage.getItem("matchid");
+let court = document.getElementById("courtname");
+var matchid = localStorage.getItem("matchid");
 let button = document.getElementsByClassName("myButton")[0];
 let buttons = document.getElementsByTagName("button");
 
-fetch("http://localhost:8080/match/"+matchid)
-    .then(function (response) { return response.json(); })
-    .then(function (data) {
-        name1.innerHTML = data.player1;
-        name2.innerHTML = data.player2;
-    })
+function getmatch(){
+    fetch("http://localhost:8080/match/"+matchid)
+        .then(function (response) { return response.json(); })
+        .then(function (data) {
+            name1.innerHTML = data.player1;
+            name2.innerHTML = data.player2;
+            court.innerHTML = data.court;
+        })
+}
+
+getmatch();
+
 let allSets = document.querySelectorAll(".set")
 button.addEventListener("click",  (event) =>  {
 
