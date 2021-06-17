@@ -1,4 +1,4 @@
-let formsubmit = document.getElementsByTagName("button").item(0)
+let formsubmit = document.getElementById("createMatch")
 var forminputs = document.getElementsByClassName("input-field");
 
 //creates Match and returns id of created match

@@ -13,13 +13,13 @@ function addListener(){
     for(let i=0; i< matches.length;i++){
         matches[i].addEventListener("click", event =>{
             localStorage.setItem("matchid",matches[i].dataset.id);
-            window.open("matchoverview.html")
+            window.location.replace("matchoverview.html");
         })
     }
 }
 
 fetch("http://localhost:8080/match/all")
-    .then(function (response) { return response.json(); })
+    .then(function (responses) { return response.json(); })
     .then(function (data) {
         for(ele in data){
             if(ele==0){
