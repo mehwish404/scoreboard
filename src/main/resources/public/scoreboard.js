@@ -4,6 +4,8 @@ let court = document.getElementById("courtname");
 var matchid = localStorage.getItem("matchid");
 let button = document.getElementsByClassName("myButton")[0];
 let buttons = document.getElementsByTagName("button");
+let allSets = document.querySelectorAll(".set")
+let finish = document.getElementsByClassName("end")[0];
 
 function getmatch(){
     fetch("http://localhost:8080/match/"+matchid)
@@ -15,9 +17,24 @@ function getmatch(){
         })
 }
 
+function clickableMatch(){
+    // entferne active von allen Element, die .set als CSS-Klasse haben
+    allSets.forEach(s => s.classList.remove("active"))
+
+    // danach füge active CSS-Klasse zum angeklickten Set hinzu
+    clickedSet.classList.add("active")
+
+    console.log(clickedSet);
+}
+
 getmatch();
 
-let allSets = document.querySelectorAll(".set")
+finish.addEventListener( "click",  (event) =>  {
+    allSets.forEach(s => s.classList.remove("active"))
+    allSets.forEach(s => s.removeEventListener("click",clickableMatch))
+    button.remove();
+    finish.remove();
+})
 button.addEventListener("click",  (event) =>  {
 
     fetch("http://localhost:8080/match/"+matchid+"/addSet",{
@@ -45,15 +62,7 @@ button.addEventListener("click",  (event) =>  {
         .catch(error => alert(error.message))
 });
 allSets.forEach(clickedSet => {
-    clickedSet.addEventListener("click", (event) => {
-        // entferne active von allen Element, die .set als CSS-Klasse haben
-        allSets.forEach(s => s.classList.remove("active"))
-
-        // danach füge active CSS-Klasse zum angeklickten Set hinzu
-        clickedSet.classList.add("active")
-
-        console.log(clickedSet);
-    })
+    clickedSet.addEventListener("click", clickableMatch());
 })
 for (let i = 0; i < buttons.length; i++) {
     let button = buttons[i];
