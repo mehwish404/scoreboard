@@ -26,7 +26,7 @@ public class MatchSetService {
     public MatchSet createMatchSet(Match match) throws MatchSetLimitCrossExceptions {
         List<MatchSet> matchesets = matchSetRepository.findByMatch(match);
         int setnumber = matchesets.size() + 1;
-        if ((setnumber == 3 && matchesets.get(1).getScore1() == matchesets.get(1).getScore2()) || setnumber < 3) {
+        if ((setnumber == 3 && (!matchesets.get(0).getWinner().equals(matchesets.get(1).getWinner()))) || setnumber < 3) {
             logger.warn("am anfang " + match.getMatchsets().size());
             MatchSet matchSet = matchSetRepository.save(new MatchSet(match, setnumber));
             match.getMatchsets().add(matchSet);
@@ -110,6 +110,14 @@ public class MatchSetService {
             }
         }
 
+        if(p1score<p2score) {
+            matchset.setWinner(matchset.getMatch().getPlayer2());
+        }else if(p2score<p1score) {
+            matchset.setWinner(matchset.getMatch().getPlayer1());
+        }
+        else if(p2score==p1score) {
+            matchset.setWinner("");
+        }
         return matchSetRepository.save(matchset);
     }
 

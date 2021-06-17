@@ -22,12 +22,14 @@ public class MatchSet {
     private Match match;
     private  int score1;
     private  int score2;
+    private String winner;
 
     public MatchSet(Match match,int setnumber) {
         this.score1=0;
         this.score2=0;
         this.match=match;
         this.setnumber=setnumber;
+        this.winner ="";
     }
 
     public MatchSet() {
@@ -58,5 +60,8 @@ public class MatchSet {
     public Match getMatch() {
         return match;
     }
+    public String getWinner() { return winner; }
+    public void setWinner(String winner) { this.winner = winner; }
+
 
 }
