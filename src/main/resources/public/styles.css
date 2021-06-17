@@ -14,8 +14,20 @@
     min-height: 0vh;
 
 }
+.names{
+    padding-top: 7vw;
+    -ms-filter: "FlipH";
+    text-align: center;
+    transform: rotate(270deg);
+}
+
 .hide{
     display:none;
+}
+.match.active {
+    background: #c19797;
+    margin: 100px;
+    min-height: 30vh;
 }
 
 .set.active {
@@ -40,9 +52,20 @@
     background: blanchedalmond;
     font-size: 40px;
 }
-
+.player{
+    display: grid;
+    background: blanchedalmond;
+    font-size: 40px;
+}
 .score.left {
     grid-template-columns: 1fr 2fr;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 10px;
+    padding: 10px;
 }
 
 .score.right {
@@ -185,4 +208,10 @@ form{
     color: white;
     text-align: left;
     margin-left: 10px;
+}
+.matchbutton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
 }
