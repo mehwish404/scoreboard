@@ -17,21 +17,12 @@ function getmatch(){
         })
 }
 
-function clickableMatch(){
-    // entferne active von allen Element, die .set als CSS-Klasse haben
-    allSets.forEach(s => s.classList.remove("active"))
-
-    // danach füge active CSS-Klasse zum angeklickten Set hinzu
-    clickedSet.classList.add("active")
-
-    console.log(clickedSet);
-}
 
 getmatch();
 
 finish.addEventListener( "click",  (event) =>  {
     allSets.forEach(s => s.classList.remove("active"))
-    allSets.forEach(s => s.removeEventListener("click",clickableMatch))
+    //TODO clickable match Eventlistener entfernen
     button.remove();
     finish.remove();
 })
@@ -62,7 +53,15 @@ button.addEventListener("click",  (event) =>  {
         .catch(error => alert(error.message))
 });
 allSets.forEach(clickedSet => {
-    clickedSet.addEventListener("click", clickableMatch());
+    clickedSet.addEventListener("click",(event)=>{
+        // entferne active von allen Element, die .set als CSS-Klasse haben
+        allSets.forEach(s => s.classList.remove("active"))
+
+        // danach füge active CSS-Klasse zum angeklickten Set hinzu
+        clickedSet.classList.add("active")
+
+        console.log(clickedSet);
+    });
 })
 for (let i = 0; i < buttons.length; i++) {
     let button = buttons[i];
