@@ -29,7 +29,7 @@ function getmatches(){
                 matches[i].addEventListener("click", event =>{
                     console.log(matches[i].dataset.id)
                     localStorage.setItem("matchid",matches[i].dataset.id);
-                    window.open("scoreboard.html")
+                    window.open("matchoverview.html")
                 })
 
             }
