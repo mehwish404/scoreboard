@@ -1,24 +1,27 @@
-let formsubmit = document.getElementById("createMatch")
 var forminputs = document.getElementsByClassName("input-field");
+let form = document.getElementById("matchform");
 
-//creates Match and returns id of created match
-async function getId() {
-    const matchdata = { court: forminputs[0].value, player1:forminputs[1].value,player2:forminputs[2].value };
-    let response = await fetch("http://localhost:8080/match",{
+ function getmatchid(matchdata){
+    return fetch("http://localhost:8080/match",{
         method:"POST",
         headers: {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify(matchdata)
-    });
-    let data = await response.json()
-    return data.id;
+    })
+        .then(response => {return response.json()})
+        .then(data =>{
+            return data.id
+        });
 }
 
+form.addEventListener('submit', async(event) => {
+    event.preventDefault();
+    const matchdata = { court: forminputs[0].value, player1:forminputs[1].value,player2:forminputs[2].value };
+    let matchid = await getmatchid(matchdata);
 
-formsubmit.addEventListener("click", async (event) =>  {
-    let matchid = await getId();
     localStorage.setItem("matchid",matchid);
+    window.location.replace("scoreboard.html")
 });
 
 
