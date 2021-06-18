@@ -3,7 +3,9 @@
 ### Startanweisungen
 ```sh
 $ git clone https://github.com/mehwish404/scoreboard.git
-$ mvnw.cmd spring-boot:run
+$ mvnw.cmd spring-boot:run 
+oder:
+$./mvnw spring-boot:run
 ```
 Klonen Sie das Projekt in ein beliebiges Verzeichnis von Ihnen und starten Sie die Anwendung mit Hilfe von Maven.
 Die Anwendung läuft dann zu Testzwecken auf Ihrem Localhost unter Port 8000 (aufzurufen unter http://localhost:8080/).
