@@ -19,7 +19,7 @@ function addListener(){
 }
 
 fetch("http://localhost:8080/match/all")
-    .then(function (responses) { return response.json(); })
+    .then(function (response) { return response.json(); })
     .then(function (data) {
         for(ele in data){
             if(ele==0){
