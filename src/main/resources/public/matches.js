@@ -34,13 +34,14 @@ function getAllMatches(url){
             addListener();
         })
 }
-function removeMatches(){
+
+function clearMatches(){
     let d = document.getElementById("uebericht")
     var last = d.lastElementChild;
     var first = d.firstElementChild;
     while (last != first) {
         last.remove();
-        last = d.firstElementChild;
+        last = d.lastElementChild;
     }
     first.classList.add("hide");
 }
@@ -48,7 +49,7 @@ function removeMatches(){
 getAllMatches("http://localhost:8080/match/all");
 
 function filterCurrent(){
-    removeMatches();
+    clearMatches();
     if (checkBoxCurrent.checked == true){
         checkBoxEnded.checked=false;
         getAllMatches("http://localhost:8080/match/current");
@@ -58,7 +59,7 @@ function filterCurrent(){
     }
 }
 function filterEnded(){
-   removeMatches();
+    clearMatches();
     if (checkBoxEnded.checked == true){
         checkBoxCurrent.checked=false;
         getAllMatches("http://localhost:8080/match/finished");
