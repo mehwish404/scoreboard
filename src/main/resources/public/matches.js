@@ -1,11 +1,10 @@
-let firstmatch= document.getElementsByClassName("set")[0];
+let firstmatch= document.getElementsByClassName("grid-item")[0];
 
 function createMatchfield(match,matchdata){
-    match.getElementsByClassName("name1")[0].innerHTML= matchdata.player1
-    match.getElementsByClassName("name2")[0].innerHTML= matchdata.player2
+    match.getElementsByClassName("player1")[0].innerHTML= matchdata.player1
+    match.getElementsByClassName("player2")[0].innerHTML= matchdata.player2
     match.classList.remove("hide");
     match.dataset.id= matchdata.id;
-    match.style.transform = "rotate(90deg)";
 }
 
 function addListener(){

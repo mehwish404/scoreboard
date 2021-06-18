@@ -2,7 +2,9 @@
     background: #a1c1a1;
     height: 100vh;
 }
-
+.app{
+    background: #a1c1a1;
+}
 /** Zeile **/
 .set {
     display: grid;
@@ -14,21 +16,39 @@
     min-height: 0vh;
 
 }
-.names{
-    padding-top: 7vw;
+.bottom, .top{
+    background: blanchedalmond;
+    font-size: 40px;
+    width: 15vw;
+    height: 10vw;
+    line-height:10vw;
+    text-align: center;
+}
+.middle{
+    background: #c19797;
+    font-size: 40px;
+    text-align: center;
+    width: 15vw;
+    line-height:100%;
+}
+.player1, .player2{
+    text-align: center;
+    vertical-align: middle;
+}
+.name1 ,.name2{
+    margin-top: 7vw;
     -ms-filter: "FlipH";
     text-align: center;
     transform: rotate(270deg);
 }
-
+.grid-item{
+    margin-top: 3vw;
+    margin-left: 3vw;
+}
 .hide{
     display:none;
 }
-.match.active {
-    background: #c19797;
-    margin: 100px;
-    min-height: 30vh;
-}
+
 
 .set.active {
     background: #c19797;
