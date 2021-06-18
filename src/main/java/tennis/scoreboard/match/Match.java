@@ -16,6 +16,8 @@ public class Match {
     private String player1;
     private String player2;
     private String court;
+    private boolean finished;
+
 
 
     @OneToMany(cascade=CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
@@ -29,6 +31,7 @@ public class Match {
         this.player2=player2;
         this.court = court;
         this.matchsets= new ArrayList<MatchSet>(3);
+        this.finished=false;
     }
 
 
@@ -67,4 +70,12 @@ public class Match {
     public void setCourt(String court) {
         this.court = court;
     }
+    public boolean isFinished() {
+        return finished;
+    }
+
+    public void setFinished(boolean finished) {
+        this.finished = finished;
+    }
+
 }

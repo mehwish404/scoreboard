@@ -10,7 +10,11 @@
 <div class="wrapper">
     <h1 id = "courtname">Matches</h1>
     <a href="/" class="back">Zurück</a>
-    <div class="grid-container">
+
+    <input id="currentMatches" type="checkbox" onclick="filterCurrent()"/><label for="currentMatches">Current Matches</label>
+    <input  id="endedMatches" type="checkbox" onclick="filterEnded()"/><label for="endedMatches">Ended Matches</label>
+
+    <div class="grid-container" id="uebericht">
         <div class="grid-item hide">
             <div class="bottom">
                 <p class="player1">Home</p>
@@ -21,7 +25,7 @@
             </div>
         </div>
     </div>
-</div>
+        </div>
 </body>
 <script src="matches.js"></script>
 </html>

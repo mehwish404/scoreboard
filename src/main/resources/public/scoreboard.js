@@ -53,6 +53,9 @@ getmatch();
 
 endButton.addEventListener( "click",  (event) =>  {
     allSets.forEach(s => s.classList.remove("active"))
+    fetch("http://localhost:8080/match/"+matchid+"/finish",{
+        method: "POST"
+    })
     addButton.remove();
     endButton.remove();
 })

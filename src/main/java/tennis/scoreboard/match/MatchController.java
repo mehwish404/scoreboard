@@ -20,7 +20,12 @@ public class MatchController {
 
 
     }
+    @PostMapping ("/match/{id}/finish")
+    public void finishMatch(@PathVariable Long id){
+        matchService.finishMatch(id);
 
+
+    }
     @GetMapping("/match/{id}")
     public Match getMatch(@PathVariable Long id){
         try {
@@ -35,6 +40,16 @@ public class MatchController {
     @GetMapping ("/match/all")
     public List<Match> getAll(){
         return matchService.getAll();
+
+    }
+    @GetMapping ("/match/finished")
+    public List<Match> getFinished(){
+        return matchService.getFinished();
+
+    }
+    @GetMapping ("/match/current")
+    public List<Match> getCurrent(){
+        return matchService.getCurrent();
 
     }
 

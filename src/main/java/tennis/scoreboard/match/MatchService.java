@@ -1,9 +1,13 @@
 package tennis.scoreboard.match;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import tennis.scoreboard.match.exceptions.MatchNotFoundException;
+
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class MatchService {
@@ -34,6 +38,29 @@ public class MatchService {
      */
     public List<Match> getAll() {
         return matchRepository.findAll();
+    }
+    /**
+     *
+     */
+    public List<Match> getCurrent() {
+        return matchRepository.findAll().stream().filter(c -> c.isFinished() == false).collect(Collectors.toList());
+    }
+    /**
+     *
+     */
+    public List<Match> getFinished() {
+        return matchRepository.findAll().stream().filter(c -> c.isFinished()).collect(Collectors.toList());
+    }
+
+    public void finishMatch(Long id) throws MatchNotFoundException{
+        Match m = matchRepository.findById(id);
+        if(m!= null) {
+            m.setFinished(true);
+            matchRepository.save(m);
+        }else {
+            throw new MatchNotFoundException();
+        }
+
     }
 
 

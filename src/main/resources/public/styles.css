@@ -49,7 +49,30 @@
     display:none;
 }
 
+[type="checkbox"] {
+    position: relative;
+    top: 5px;
+    width: 35px;
+    height: 35px;
+}
+[type="checkbox"] + label {
+    font-size: 35px;
+    color:white;
+    padding-right: 4vw;
 
+
+}
+
+
+[type="checkbox"] + label::before {
+    width: 65px;
+    height: 65px;
+}
+
+[type="checkbox"]:checked+label::before {
+    box-shadow: inset 0px 0px 0px 3px #fff;
+    background-color: #8cad2d;
+}
 .set.active {
     background: #c19797;
     margin: 100px;
