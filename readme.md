@@ -1,6 +1,6 @@
 # Tennis Scoreboard
 
-###Startanweisungen
+##Startanweisungen
 ```sh
 $ git clone https://github.com/mehwish404/scoreboard.git
 $ cd scoreboard
